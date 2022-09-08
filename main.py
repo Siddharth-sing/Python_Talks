@@ -2,7 +2,7 @@ import pyttsx3
 import speech_recognition as sr
 import wikipedia as wk
 import datetime
-import webbrowser
+import webbrowser as wb
 import os
 import smtplib 
 
@@ -34,12 +34,33 @@ def takeCommand():
     try: 
         print("Recognizing...")
         query = r.recognize_google(maudio, language = 'en-in'    )
-        print(f"user said: {query}\n")  
+        # str = "you said"+"..."+query 
+        # speakBaby(str)
+        # print(str)
+         
     except Exception as e:
-        print("Say that again please!")          
+        query = "Say that again please!"
+        # speakBaby("Say that again please!")  
+
+    return query            
 
 #main
 speakBaby("Initialized...")
 wishMe()   
-takeCommand() 
+query = takeCommand() 
+print(query)
+
+if 'wikipedia' in query.lower():
+    speakBaby('Searching wikipedia ...')
+    query = query.lower().replace("wikipedia","")
+    result = wk.summary(query, sentences = 2)
+    print(result)
+    speakBaby(result)
+elif 'youtube' in query.lower():
+    speakBaby('opening youtube ...')
+    query = query.lower().replace("youtube","")
+    result = wb.open("youtube.com")
+    
+       
+    
 
