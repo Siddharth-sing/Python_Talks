@@ -64,8 +64,8 @@ elif any(x in query.lower() for x in ['play','spotify','music']):
     speakBaby('opening Spotify ...')
     # wb.get('brave %s').open('https://open.spotify.com/')
     brave_path = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-    print(wb.register('brave',None,wb.BackgroundBrowser(brave_path)))
-    print(wb.get('brave').open_new_tab("https://open.spotify.com/"))
+    # print(wb.register('brave',None,wb.BackgroundBrowser(brave_path)))
+    # print(wb.get('brave').open_new_tab("https://open.spotify.com/"))
     
        
     
