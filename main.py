@@ -58,9 +58,12 @@ if 'wikipedia' in query.lower():
     speakBaby(result)
 elif 'youtube' in query.lower():
     speakBaby('opening youtube ...')
-    query = query.lower().replace("youtube","")
     result = wb.open("youtube.com")
-    
+
+elif any(x in query.lower() for x in ['play','spotify','music']):
+    speakBaby('opening Spotify ...')
+    c = wb.get(using='chrome')
+    c.open('https://open.spotify.com/')
        
     
 
