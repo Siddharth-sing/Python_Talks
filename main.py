@@ -62,8 +62,10 @@ elif 'youtube' in query.lower():
 
 elif any(x in query.lower() for x in ['play','spotify','music']):
     speakBaby('opening Spotify ...')
-    c = wb.get(using='chrome')
-    c.open('https://open.spotify.com/')
+    # wb.get('brave %s').open('https://open.spotify.com/')
+    brave_path = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe %s"
+    wb.get(brave_path).open('youtube.com')
+    
        
     
 
