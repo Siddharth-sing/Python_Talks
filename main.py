@@ -1,13 +1,13 @@
 import pyttsx3
 import speech_recognition as sr
 import wikipedia as wk
-import datetime
+import datetime as dt
 import webbrowser as wb
 import os
 import smtplib 
 
 def wishMe():
-    hour = int(datetime.datetime.now().hour)
+    hour = int(dt.datetime.now().hour)
     if hour in range(0,12):
         speakBaby("Good morning Sid .. How may I help you !")
     elif hour in range(12,17):
@@ -62,11 +62,15 @@ elif 'youtube' in query.lower():
 
 elif any(x in query.lower() for x in ['play','spotify','music']):
     speakBaby('opening Spotify ...')
-    # wb.get('brave %s').open('https://open.spotify.com/')
-    brave_path = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-    # print(wb.register('brave',None,wb.BackgroundBrowser(brave_path)))
-    # print(wb.get('brave').open_new_tab("https://open.spotify.com/"))
-    
+    wb.open("https://open.spotify.com/")
+elif 'open documents' in query.lower():
+    documents_dir = "C:\\Users\\KIIT\\OneDrive\\Documents"
+    documents = os.listdir(documents_dir)
+    print(documents)
+elif 'time' in query.lower():
+    strTime = dt.datetime.now().strftime("%H:%M:%S")
+    speakBaby(f"Sir the time is {strTime}")
+
        
     
 
