@@ -70,6 +70,10 @@ elif 'open documents' in query.lower():
 elif 'time' in query.lower():
     strTime = dt.datetime.now().strftime("%H:%M:%S")
     speakBaby(f"Sir the time is {strTime}")
+elif 'open vs code' in query.lower():
+    vscode_path = "C:\\Users\\KIIT\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"    
+    speakBaby("opening code")
+    os.startfile(vscode_path)
 
        
     
