@@ -4,7 +4,7 @@ import wikipedia as wk
 import datetime as dt
 import webbrowser as wb
 import os
-import smtplib 
+# import smtplib 
 
 def wishMe():
     hour = int(dt.datetime.now().hour)
@@ -45,35 +45,45 @@ def takeCommand():
     return query            
 
 #main
-speakBaby("Initialized...")
-wishMe()   
-query = takeCommand() 
-print(query)
+def main(t):
+    t =True
+    query = takeCommand() 
+    print(query)
+    
+    if 'wikipedia' in query.lower():
+        speakBaby('Searching wikipedia ...')
+        query = query.lower().replace("wikipedia","")
+        result = wk.summary(query, sentences = 2)
+        print(result)
+        speakBaby(result)
+    elif 'youtube' in query.lower():
+        speakBaby('opening youtube ...')
+        wb.open("https://www.youtube.com/")
+    elif any(x in query.lower() for x in ['play','spotify','music']):
+        speakBaby('opening Spotify ...')
+        wb.open("https://open.spotify.com/")
+    elif 'open documents' in query.lower():
+        documents_dir = "C:\\Users\\KIIT\\OneDrive\\Documents"
+        documents = os.listdir(documents_dir)
+        print(documents)
+    elif 'time' in query.lower():
+        strTime = dt.datetime.now().strftime("%H:%M:%S")
+        speakBaby(f"Sir the time is {strTime}")
+    elif 'open vs code' in query.lower():
+        vscode_path = "C:\\Users\\KIIT\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"    
+        speakBaby("opening code")
+        os.startfile(vscode_path)
+    elif 'quit' in  query.lower():
+        t = False
+        speakBaby("Hope you loved interacting ! Bye-Bye")
+    return t        
 
-if 'wikipedia' in query.lower():
-    speakBaby('Searching wikipedia ...')
-    query = query.lower().replace("wikipedia","")
-    result = wk.summary(query, sentences = 2)
-    print(result)
-    speakBaby(result)
-elif 'youtube' in query.lower():
-    speakBaby('opening youtube ...')
-    wb.open("https://www.youtube.com/")
+wishMe()
+t = True
+while t:
+    t = main(t)
 
-elif any(x in query.lower() for x in ['play','spotify','music']):
-    speakBaby('opening Spotify ...')
-    wb.open("https://open.spotify.com/")
-elif 'open documents' in query.lower():
-    documents_dir = "C:\\Users\\KIIT\\OneDrive\\Documents"
-    documents = os.listdir(documents_dir)
-    print(documents)
-elif 'time' in query.lower():
-    strTime = dt.datetime.now().strftime("%H:%M:%S")
-    speakBaby(f"Sir the time is {strTime}")
-elif 'open vs code' in query.lower():
-    vscode_path = "C:\\Users\\KIIT\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"    
-    speakBaby("opening code")
-    os.startfile(vscode_path)
+
 
        
     
