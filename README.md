@@ -1,14 +1,14 @@
 # Voice-Assistant-Python
 Picachu assistant
 
-##App's Overview 
+#App's Overview 
 <p>
 * In this tutorial, we will be going through a voice assistant build with python for beginners. Prerequisites for reading this article are basic knowledge of python and python package importing.
 <p> 
 
-![CCP Demo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kezbeo2v3tq3x3fw558c.gif)
 
-##Table Of Content
+
+#Table Of Content
 
 - [Project Setup ](#setup)
 - [Imports & package installation](#imports)
@@ -17,7 +17,7 @@ Picachu assistant
 - [Writer's Support ❤️](#support)
 
 <a name="setup"></a>
-##Project Setup
+#Project Setup
 * I have used the VS code editor for this project. PyCharm is also equally recommended, it depends upon your personal choice which among the two to choose. But other than these two I won't strongly recommend any editor.
 
 * Create a file `my_assistant.py`.
