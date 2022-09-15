@@ -21,7 +21,7 @@ Picachu assistant
 * Create a file `my_assistant.py`.
 
 <a name="imports"></a>
-#Imports & Packages Installation
+# Imports & Packages Installation
 
 * We will be using various python packages for creating our smart assistant. Some of them need to be installed while some are pre-installed packages.
 
@@ -85,7 +85,7 @@ import os
 ```
 
 <a name="features"></a>
-#Features and More
+# Features and More
 
 * This can be extended immensely as per the developer's interest. I have provided basic steps with a few features in this tutorial. But you can fork the [GitHub Repo ](#github) for various features.
 
