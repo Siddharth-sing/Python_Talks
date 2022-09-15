@@ -1,6 +1,7 @@
 # Voice-Assistant-Python
 # App's Overview 
 <p>
+ 
 * In this tutorial, we will be going through a voice assistant build with python for beginners. Prerequisites for reading this article are basic knowledge of python and python package importing.
 <p> 
 
