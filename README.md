@@ -1,4 +1,9 @@
 # Voice-Assistant-Python
+
+<a href="https://dev.to/siddharthsing/hello-python-voice-assistant-4g45">
+  <img src="https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white" height="200px" width="500px">
+ </a>
+ 
 # App's Overview 
 <p>
  
